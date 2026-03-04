@@ -86,3 +86,11 @@ while t<tmax %update until the max time value is reached
 end
 
 %add code here to produce figures after simulation ends
+
+%calculations
+n1 = 1
+n2 = sqrt(eps_r)
+tau_analytic = 2*n1/(n1+n2)
+gamma_analytic = lambda/sqrt(eps_r)
+up_analytic = c/sqrt(eps_r)
+
