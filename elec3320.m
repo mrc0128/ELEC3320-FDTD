@@ -94,3 +94,19 @@ tau_analytic = 2*n1/(n1+n2)
 gamma_analytic = lambda/sqrt(eps_r)
 up_analytic = c/sqrt(eps_r)
 
+% numerical: transmission cooefficent
+inc_amp = max(abs(E0))
+trans_amp = max(abs(E1))
+tau_numerical = trans_amp/inc_amp
+gamma_num = 5; %roughly 5 based off measuring plot 125-75 = 50 50/ 10 wavelengths y roughly 4.7m - 5m
+up_num = gamma_num * f
+
+%error
+error_tau = abs(tau_numerical - tau_analytic) / tau_analytic * 100;
+error_gamma = abs(gamma_num - gamma_analytic) / gamma_analytic * 100;
+error_up = abs(up_num - up_analytic) / up_analytic * 100; 
+
+fprintf('\nTau error = %.2f%%\n', error_tau);
+fprintf('\nGamma error = %.2f%%\n', error_gamma);
+fprintf('\nUp error = %.2f%%\n', error_up);
+
