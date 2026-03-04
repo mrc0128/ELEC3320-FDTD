@@ -1,4 +1,6 @@
 % This code implements a one-dimensional scalar wave equation
+%test comment
+
 following the
 % finite-difference time domain (FDTD) method of Taflove and Hagness
 % Physical constants and user-defined values
