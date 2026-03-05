@@ -88,19 +88,32 @@ end
 %add code here to produce figures after simulation ends
 
 %calculations
-n1 = 1
-n2 = sqrt(eps_r)
-tau_analytic = 2*n1/(n1+n2)
-gamma_analytic = lambda/sqrt(eps_r)
-up_analytic = c/sqrt(eps_r)
+n1 = 1;
+n2 = sqrt(eps_r);
+tau_analytic = (2*n1)/(n1+n2);
+gamma_analytic = lambda/sqrt(eps_r);
+up_analytic = c/sqrt(eps_r);
 
 % numerical: transmission cooefficent
-inc_amp = max(abs(E0))
-trans_amp = max(abs(E1))
-tau_numerical = trans_amp/inc_amp
+inc_amp = max(abs(E0));
+trans_amp = max(abs(E1));
+tau_numerical = trans_amp/inc_amp;
 gamma_num = 5; %roughly 5 based off measuring plot 125-75 = 50 50/ 10 wavelengths y roughly 4.7m - 5m
-up_num = gamma_num * f
+up_num = gamma_num * f;
 
 %error
-error_tau = abs(tau_numerical - tau_analytic) / tau_analytic * 100
+error_tau = abs(tau_numerical - tau_analytic) / tau_analytic * 100;
+error_gamma = abs(gamma_num - gamma_analytic) / gamma_analytic * 100;
+error_up = abs(up_num - up_analytic) / up_analytic * 100; 
+
+fprintf('\nTau error = %.2f%%\n', error_tau);
+fprintf('\nGamma error = %.2f%%\n', error_gamma);
+fprintf('\nUp error = %.2f%%\n', error_up);
+fprintf('\nUp error = %.2f%%\n', tau_numerical);
+
+%plotting probes
+time_vector = (0:length(E0-1) *de)
+
+
+
 
